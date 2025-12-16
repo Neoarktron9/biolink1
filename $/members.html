@@ -136,14 +136,23 @@
         document.addEventListener("DOMContentLoaded", type);
     </script>
     <script>
-        var titles = ["R","A","P","E","R","A","P","E","D","R","A","P","I","S","T","R","A","P","I","N","G", ];
-        var currentTitleIndex = 0;
-        function changeTitle() {
-            document.title = titles[currentTitleIndex];
-            currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+    var words = ["rape", "raped", "raping", "rapist"];
+    var wordIndex = 0;
+    var charIndex = 0;
+
+    function changeTitle() {
+        document.title = words[wordIndex].slice(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex > words[wordIndex].length) {
+            charIndex = 0;
+            wordIndex = (wordIndex + 1) % words.length;
         }
-        setInterval(changeTitle, 300);
-    </script>
+    }
+
+    setInterval(changeTitle, 300);
+</script>
+
 
     <div class="profile">
         <img src="marian.png" alt="Profile Picture">
