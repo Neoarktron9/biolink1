@@ -136,22 +136,23 @@
         document.addEventListener("DOMContentLoaded", type);
     </script>
     <script>
-    var words = ["rape", "raped", "raping", "rapist"];
-    var wordIndex = 0;
-    var charIndex = 0;
+    var titleWords = ["rape", "raped", "raping", "rapist"];
+    var titleWordIndex = 0;
+    var titleCharIndex = 0;
 
     function changeTitle() {
-        document.title = words[wordIndex].slice(0, charIndex + 1);
-        charIndex++;
+        document.title = titleWords[titleWordIndex].slice(0, titleCharIndex + 1);
+        titleCharIndex++;
 
-        if (charIndex >= words[wordIndex].length) {
-            charIndex = 0;
-            wordIndex = (wordIndex + 1) % words.length;
+        if (titleCharIndex === titleWords[titleWordIndex].length) {
+            titleCharIndex = 0;
+            titleWordIndex = (titleWordIndex + 1) % titleWords.length;
         }
     }
 
     setInterval(changeTitle, 300);
 </script>
+
 
 
     <div class="profile">
