@@ -144,7 +144,7 @@
         document.title = words[wordIndex].slice(0, charIndex + 1);
         charIndex++;
 
-        if (charIndex > words[wordIndex].length) {
+        if (charIndex >= words[wordIndex].length) {
             charIndex = 0;
             wordIndex = (wordIndex + 1) % words.length;
         }
