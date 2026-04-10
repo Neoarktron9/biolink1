@@ -112,6 +112,7 @@
         let isDeleting = false;
 
         function type() {
+            if (!textElement) return;
             const currentText = texts[textIndex];
             if (isDeleting) {
                 textElement.textContent = currentText.substring(0, charIndex - 1);
