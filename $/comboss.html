@@ -3,15 +3,16 @@
 <script src="./uhoh.js"></script>
 <script src="./anti-inspect-element.js"></script>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style2.css">
-  <script src="snowstorm.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="icon" href="https://cdn.discordapp.com/emojis/1232693242412273735.webp?size=96&quality=lossless">
-  <title>User Profiles</title>
-  <style>
-    @font-face {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user.css">
+    <script src="snowstorm.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="icon" href="https://cdn.discordapp.com/emojis/1232693242412273735.webp?size=96&quality=lossless">
+    <title>Com Boss</title>
+    <style>
+      @font-face {
         font-family: 'Mine.ttf';
         src: url('Mine.ttf') format('truetype');
       }
@@ -33,16 +34,18 @@
             display: none; 
         }
 
-        .profile-pic {
-            width: 100%;
-            height: 100%;
+        img {
             object-fit: cover;
-            display: block;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid white; 
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
+            max-width: 150px; 
         }
 
-        #Milo-text {
-            font-size: clamp(10px, 10vw, 15px); 
-            margin-bottom: 13px;
+        #name-text {
+            font-size: clamp(30px, 10vw, 40px); 
+            margin-bottom: 15px;
             text-shadow: 0 0 20px rgba(255, 255, 255, 1); 
         }
 
@@ -51,6 +54,27 @@
             margin-bottom: 25px;
             text-shadow: 0 0 20px rgba(255, 255, 255, 1);
         }
+
+        button {
+            background-color: transparent; 
+            border: none;
+            padding: 0; 
+            cursor: pointer;
+            margin: 8px; 
+            transition: all 0.2s ease-in-out;
+        }
+
+        button:hover {
+            transform: translateY(-3px); 
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 32px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
@@ -76,44 +100,27 @@
         }
 
         @keyframes glow {
-            from { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
-            to { text-shadow: 0 0 25px rgba(255, 255, 255, 1); }
+            from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+            to { text-shadow: 0 0 30px rgba(255, 255, 255, 1); }
         }
 
         body {
             cursor: url('MARIAN.cur'), url('MARIAN.cur'), url('MARIAN.cur'), auto;
         }
-
-        .profile {
-            display: inline-block;
-            text-align: center;
-            margin: 0 40px;
-        }
-
-        .profile-frame {
-            width: 90px;
-            height: 90px;
-            border-radius: 20%;
-            border: 2px solid white;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: black;
-            margin-bottom: 10px;
-        }
-
-        .profile-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     </style>
 </head>
 <body>
-   
-    <div id="click-me" onclick="showContent()"></div>
+    <div id="container">
+        <img src="patt.png" alt="Profile Picture"> 
+        <div id="name-text">Com Boss</div> 
+        <div id="footer">
+            <span id="typing-text" class="typewriter"></span> 
+        </div>
+        <div class="dabox">
+        </div>
+    </div>
+
+    <div id="click-me" onclick="showContent()">CLICK ME</div>
 
     <audio id="backgroundMusic">
         <source src="marian.mp3" type="audio/mpeg">
@@ -130,13 +137,12 @@
         }
 
         const textElement = document.getElementById("typing-text");
-        const texts = ["kawaii", "TWINK", "Femboy :3"];
+        const texts = ["Com Boss", "PATT"];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
 
         function type() {
-            if (!textElement) return;
             const currentText = texts[textIndex];
             if (isDeleting) {
                 textElement.textContent = currentText.substring(0, charIndex - 1);
@@ -161,39 +167,13 @@
         document.addEventListener("DOMContentLoaded", type);
     </script>
     <script>
-    var titleWords = ["rape", "raped", "raping", "rapist"];
-    var titleWordIndex = 0;
-    var titleCharIndex = 0;
-
-    function changeTitle() {
-        document.title = titleWords[titleWordIndex].slice(0, titleCharIndex + 1);
-        titleCharIndex++;
-
-        if (titleCharIndex === titleWords[titleWordIndex].length) {
-            titleCharIndex = 0;
-            titleWordIndex = (titleWordIndex + 1) % titleWords.length;
+        var titles = ["Com Boss", "PATT", "Com Boss", "PATT"];
+        var currentTitleIndex = 0;
+        function changeTitle() {
+            document.title = titles[currentTitleIndex];
+            currentTitleIndex = (currentTitleIndex + 1) % titles.length;
         }
-    }
-
-    setInterval(changeTitle, 250);
-</script>
-
-
-
-    <div class="profile">
-        <div class="profile-frame">
-            <img class="profile-pic" src="marian.png" alt="Profile Picture">
-        </div>
-        <p><a href="index.html">Femboy</a></p>
-        <style type="Milo-text"></style>
-    </div>
-
-    <div class="profile">
-        <div class="profile-frame">
-            <img class="profile-pic" src="patt.png" alt="Profile Picture">
-        </div>
-        <p><a href="comboss.html">Com Boss</a></p>
-    </div>
- 
+        setInterval(changeTitle, 400);
+    </script>
 </body>
 </html>
