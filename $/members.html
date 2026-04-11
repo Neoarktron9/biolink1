@@ -91,6 +91,26 @@
             text-align: center;
             margin: 0 40px;
         }
+
+        .profile-frame {
+            width: 90px;
+            height: 90px;
+            border-radius: 20%;
+            border: 2px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            margin-bottom: 10px;
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -163,13 +183,17 @@
 
 
     <div class="profile">
-        <img class="profile-pic" src="marian.png" alt="Profile Picture">
+        <div class="profile-frame">
+            <img class="profile-pic" src="marian.png" alt="Profile Picture">
+        </div>
         <p><a href="index.html">Femboy</a></p>
         <style type="Milo-text"></style>
     </div>
 
     <div class="profile">
-        <img class="profile-pic" src="patt.png" alt="Profile Picture">
+        <div class="profile-frame">
+            <img class="profile-pic" src="patt.png" alt="Profile Picture">
+        </div>
         <p><a href="#">Com Boss</a></p>
     </div>
  
